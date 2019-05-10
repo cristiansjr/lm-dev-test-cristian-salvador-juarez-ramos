@@ -1,0 +1,25 @@
+<data name="dssClienteSecurity" serviceGroup="" serviceNamespace="">
+    <description/>
+    <config id="dssConnectionClientSecurity">
+        <property name="carbon_datasource_name">pgdb_lif_dev</property>
+    </config>
+    <query id="client_login" useConfig="dssConnectionClientSecurity">
+        <sql>select 1 as loginBoolean
+from client.cli_client
+where cli_user = :user
+  and cli_password = :password
+union all
+select 0 as loginBoolean
+fetch first 1 row only</sql>
+        <result escapeNonPrintableChar="true" outputType="json">
+           {
+           	"login": $loginBoolean
+           }
+        </result>
+        <param name="user" sqlType="STRING" type="IN"/>
+        <param name="password" sqlType="STRING" type="IN"/>
+    </query>
+    <operation name="client_login_op">
+        <call-query/>
+    </operation>
+</data>

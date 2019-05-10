@@ -1,0 +1,6 @@
+<data name="dssClienteSecurity" serviceGroup="" serviceNamespace="">
+    <description/>
+    <config id="dssConnectionClientSecurity">
+        <property name="carbon_datasource_name">pgdb_lif_dev</property>
+    </config>
+</data>
