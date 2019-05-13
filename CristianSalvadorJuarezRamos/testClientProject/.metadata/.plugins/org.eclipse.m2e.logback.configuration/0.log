@@ -1,0 +1,10 @@
+2019-05-10 19:24:31,543 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
+2019-05-10 19:24:40,511 [Worker-6] INFO  org.eclipse.jetty.util.log - Logging initialized @182596ms to org.eclipse.jetty.util.log.Slf4jLog
+2019-05-10 19:24:41,364 [Worker-6] INFO  org.eclipse.jetty.server.Server - jetty-9.4.8.v20171121, build timestamp: 2017-11-21T15:27:37-06:00, git hash: 82b8fb23f757335bb3329d540ce37a2a2615f0a8
+2019-05-10 19:24:41,477 [Worker-6] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2019-05-10 19:24:41,477 [Worker-6] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2019-05-10 19:24:41,481 [Worker-6] INFO  org.eclipse.jetty.server.session - Scavenging every 600000ms
+2019-05-10 19:24:41,509 [Worker-6] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@35b14ced{/welcome,file:///C:/Users/Cristian/Desktop/eclipseWSO2ESB/developer-studio-ei-eclipse-wso2/eclipse/configuration/org.eclipse.osgi/1178/0/.cp/TemplateDash/,AVAILABLE}
+2019-05-10 19:24:41,511 [Worker-6] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@44d821c6{/servlet,null,AVAILABLE}
+2019-05-10 19:24:41,757 [Worker-6] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@4f7ebe5c{HTTP/1.1,[http/1.1]}{0.0.0.0:7774}
+2019-05-10 19:24:41,758 [Worker-6] INFO  org.eclipse.jetty.server.Server - Started @183843ms

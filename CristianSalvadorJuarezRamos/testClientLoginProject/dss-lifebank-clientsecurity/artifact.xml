@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="dss-lifebank-clientsecurity" groupId="com.lifebank.dss-lifebank-clientsecurity.dataservice" version="1.0.0" type="service/dataservice" serverRole="DataServicesServer">
+        <file>dataservice/dss-lifebank-clientsecurity.dbs</file>
+    </artifact>
+</artifacts>

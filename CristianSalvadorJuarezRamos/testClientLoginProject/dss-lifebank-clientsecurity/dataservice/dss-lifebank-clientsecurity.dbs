@@ -1,0 +1,26 @@
+<data name="dss-lifebank-clientsecurity" serviceGroup="" serviceNamespace="">
+    <description/>
+    <config id="dssConnectionClientSecurity">
+        <property name="carbon_datasource_name">pglmdevtest</property>
+    </config>
+    <query id="client_login" useConfig="dssConnectionClientSecurity">
+        <sql>
+        	select client.cli_login_function(:p_user,:p_password,:p_ip) as response
+        </sql>
+        <result escapeNonPrintableChar="true" outputType="json">
+           {"response":{
+           	"loginResponseCode": "$response(type:integer)"
+           }}
+        </result>
+        <param name="p_user" sqlType="STRING" type="IN"/>
+        <param name="p_password" sqlType="STRING" type="IN"/>
+        <param name="p_ip" sqlType="STRING" type="IN"/>
+    </query>
+    <resource method="POST" path="validate-credential">
+        <call-query href="client_login">
+            <with-param name="p_user" query-param="user"/>
+            <with-param name="p_password" query-param="password"/>
+            <with-param name="p_ip" query-param="ip"/>
+        </call-query>
+    </resource>
+</data>

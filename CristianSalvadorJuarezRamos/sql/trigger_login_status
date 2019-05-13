@@ -1,0 +1,19 @@
+CREATE OR REPLACE FUNCTION client.cli_client_status_insupddel_trg_procedure() RETURNS TRIGGER AS $cli_client_status_log$
+    BEGIN
+        IF (TG_OP = 'DELETE') THEN
+            INSERT INTO client.cli_client_status_log SELECT OLD.cli_client_status_id, OLD.cli_client_id, OLD.cli_login_attempts, OLD.cli_client_ip, OLD.cli_status, user, 'D', now();
+            RETURN OLD;
+        ELSIF (TG_OP = 'UPDATE') THEN
+            INSERT INTO client.cli_client_status_log SELECT NEW.cli_client_status_id, NEW.cli_client_id, NEW.cli_login_attempts, NEW.cli_client_ip, NEW.cli_status, user, 'U', now();
+            RETURN NEW;
+        ELSIF (TG_OP = 'INSERT') THEN
+            INSERT INTO client.cli_client_status_log SELECT NEW.cli_client_status_id, NEW.cli_client_id, NEW.cli_login_attempts, NEW.cli_client_ip, NEW.cli_status, user, 'I', now();
+            RETURN NEW;
+        END IF;
+        RETURN NULL;
+    END;
+$cli_client_status_log$ LANGUAGE plpgsql;
+
+CREATE TRIGGER cli_client_status_log_trg
+AFTER INSERT OR UPDATE OR DELETE ON client.cli_client_status
+    FOR EACH ROW EXECUTE PROCEDURE client.cli_client_status_insupddel_trg_procedure();

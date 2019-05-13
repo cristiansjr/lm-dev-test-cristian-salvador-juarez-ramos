@@ -1,0 +1,10 @@
+-encryption-svc
+	No tiene dependencias.
+
+-client-svc
+	Depende de encryption-svc
+	Depende de base de datos lifebank, con sus esquemas y tablas.
+	Depende de wso2 ESB con el CAR lifebank-clientsecurityCompositeApplication_1.0.0.car en la instancia
+
+-lifebank-clientsecurityCompositeApplication_1.0.0.car
+	Depende de base de datos lifebank, con sus esquemas y tablas.
